@@ -1,80 +1,132 @@
 
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <style>
-        table,th,td {
-          border: 2px solid black;
+        .dot {
+            background-color: #FFC773;
+            box-shadow: 0px 0px 15px #FF9900;
+            border-color: #FDF1DF;
+            width: 22px;
+            height: 22px;
+            margin-top: 5px;
+            float: left;
+            border-radius: 50%;
+            margin-right: 10px;
         }
-        .gm-control-active>img {
-            box-sizing: content-box;
-            display: none;
-            left: 50%;
-            pointer-events: none;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%)
+        
+        table {
+            border: 1px solid #3d3d3d;
+            border-collapse: collapse;
+            /* padding: 1px; */
+            border-style: hidden;
+            background: rgb(39, 39, 39);
+            height: 50px;
+            float: center;
+            margin-left: 175px;
+            margin-top: 45px;
+            margin-right: 5px;
+            margin-bottom: 1px;
         }
-        .pullleft {
-           margin-left: auto;
+        
+        th,
+        td {
+            border: 1px solid #3d3d3d;
+            border-collapse: collapse;
+            /* padding: 0; */
+            padding-bottom: 0%;
+            height: 10px;
+            padding-left: 10px;
         }
+        
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            outline: none;
+            font-size: 30px;
+            color: #8b8b8b;
+        }
+    </style>
+</head>
 
-  </style>
-  </head>
-  <body>
+<body style="background-color:  rgb(0, 0, 0);">
 
-    <iframe width="700" height="650" align="right" src="http://localhost:3000/map.html"></iframe>
+    <iframe width="700" height="890" align="right" src="map.html"></iframe>
 
-<table style="width:40%">
-  <tr>
-    <td><p>Battery Charge</p>
-    <p>58%</p></td>
-  </tr>
-  <tr>
-    <td><p>Range</p>
-    <p>175 km</p></td>
-  </tr>
-  <tr>
-    <td><p>Temperature</p>
-    <p>23 C</p></td>
-  </tr>
-  <tr>
-    <td><p>Weather</p>
-    <p>Sunny</p></td>
-  </tr>
-</table>
-  
-  <br>
-  
-  <table style="width:40%">
-  <tr>
-    <td><p>south Station</p>
-    <p>2.2 Rs per unit - 4 km</p>
-  </td>
-  </tr>
-  <tr>
-  <td><p>North Station</p>
-    <p>
-3 Rs per unit - 6 km</p>
-</td>
-  </tr>
-</table>
-    <br>
-     <table style="width:40%">
-  <form>
-    <tr>
-   <td>
-    <div>
-      <p id="from">From:<%=from%></p>
-    </div></td>
-  </tr>
-  <tr>
-   <td>
-     <div>
-      <p id="to">To:<%=to%></p>
-     </div></td>
-  </tr>
-  </form>
-</table>
+    <table style="width: 25%;">
+        <tbody>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color:  #8b8b8b">Battery Charge<br><span id="battery" style="font-size:30px"><%=bc%></span></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Range<br><span style="font-size:30px">175 km</span></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Temperature<br><span style="font-size:30px">23° C</span></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Weather<br><span style="font-size:35px">Sunny</span></p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <br> -->
+
+    <table style="width:25% ">
+        <tr>
+            <td>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">South Station</p>
+                <div class="dot "></div>
+
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b; font-size:20px ">2.2 Rs per unit - 4 km</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">North Station</p>
+                <div class="dot "></div>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b; font-size:20px ">3 Rs per unit - 6 km</p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- <br> -->
+
+    <table style="width: 25%;">
+        <tr>
+            <td>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">From</p>
+                <div></div>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b "><%=from%></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">To</p>
+                <div></div>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b "><%=to%></p>
+            </td>
+        </tr>
+    </table>
+    <script src="http://localhost:3000/read.js" type='text/javascript'></script>
 </body>
+
 

@@ -1,0 +1,230 @@
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+        .dot {
+            /* background-color: rgb(115, 255, 169); */
+            box-shadow: 0px 0px 15px #FF9900;
+            border-color: #FDF1DF;
+            width: 22px;
+            height: 22px;
+            margin-top: 5px;
+            float: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            padding: 1px;
+        }
+        .hide {
+            display: none;
+        }
+        
+        table {
+            border: 1px solid #3d3d3d;
+            border-collapse: collapse;
+            /* padding: 1px; */
+            border-style: hidden;
+            background: rgb(39, 39, 39);
+            /* height: 50px; */
+            float: center;
+            /* margin-left: 175px; */
+            margin-top: 45px;
+            /* margin-right: 5px; */
+            margin-bottom: 1px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+        
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* iframe.center {
+            margin-left: auto;
+            margin-right: auto;
+        } */
+        
+        th,
+        td {
+            border: 1px solid #3d3d3d;
+            border-collapse: collapse;
+            /* padding: 0; */
+            padding-bottom: 0%;
+            height: 10px;
+            padding-left: 10px;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            outline: none;
+            font-size: 30px;
+            color: #8b8b8b;
+        }
+        
+        .alert {
+            padding: 20px;
+            background-color: #FFC773;
+            color: black;
+            border-radius: 15px;
+            float: center;
+            width: 40%;
+            text-align: center;
+        }
+        
+        .closebtn {
+            margin-left: 15px;
+            color: black;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .closebtn:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body style="background-color:  rgb(0, 0, 0);">
+    <div class="alert hide" id ="warning">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Warning!</strong> "Enter warning here"
+    </div>
+
+    <iframe width="50%" height="920px" align="right" src="map.html" text-align="center"></iframe>
+
+    <table style="width: 25%;" class="center">
+        <tbody>
+            <tr>
+                <td>
+                    <p id="battery" style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color:  #8b8b8b;">Battery Charge<span style="font-size:30px; float: right;"><%=bc%></span></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color:  #8b8b8b" id="predict">Final SoC<span style="font-size:30px; float:right;">22%</span>
+                        <div class="dot" style="background-color: rgb(115, 255, 169);"></div>
+                    </p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Range<span style="font-size:30px; float:right">175 km</span></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Temperature<span style="font-size:30px; float: right">23° C</span></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Weather<span style="font-size:30px; float: right;">Sunny</span></p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <br> -->
+
+    <!-- <table style="width:25% " ; class="center">
+        <tr>
+            <td>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">South Station</p>
+                <div class="dot "></div>
+
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b; font-size:20px ">2.2 Rs per unit - 4 km</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">North Station</p>
+                <div class="dot "></div>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b; font-size:20px ">3 Rs per unit - 6 km</p>
+            </td>
+        </tr>
+    </table> -->
+
+    <!-- <br> -->
+
+    <!-- <table style="width:25% " ; class="center">
+        <tr>
+            <td style="margin-left: auto; margin-right: auto">
+               <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">South Station</p> -->
+    <!-- <div class="dot "></div> -->
+
+    <!-- <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b; font-size:20px ">2.2 Rs per unit - 4 km</p> -->
+    <!-- </td>
+    </tr>
+    </table> -->
+
+    <table style="width: 25%;" class="center">
+        <tbody>
+            <form action="/xyz" method="POST">
+                <tr>
+                    <td>
+                        <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color:  #8b8b8b">Cooling<br><input type="radio" name="value" value="1"> 1
+                            <input type="radio" name="value" value="2"> 2
+                            <input type="radio" name="value" value="3"> 3
+                            <input type="radio" name="value" value="4"> 4 </p>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Heating<br><input type="radio" name="value" value="1"> 1
+                            <input type="radio" name="value" value="2"> 2
+                            <input type="radio" name="value" value="3"> 3
+                            <input type="radio" name="value" value="4"> 4 </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Music<br><input type="radio" name="gender" value="Yes"> Y
+                            <input type="radio" name="gender" value="No"> N</p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color: #8b8b8b ">Headlights/Lights<br>
+                            <input type="radio" name="gender" value="Yes"> Y
+                            <input type="radio" name="gender" value="No"> N</p>
+
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+
+    <table style="width: 25%;" class="center">
+        <tr>
+            <td>
+                <div></div>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color:  #8b8b8b">From<br><span style="font-size:30px; background-color: rgb(39, 39, 39)"><input id="from" type="text" name="fname" placeholder=""></span><%=from%></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div></div>
+                <p style="font-family: Helvetica-Neue, Helvetica, Arial, sans-serif; color:  #8b8b8b">To<br><span style="font-size:30px; background-color: rgb(39, 39, 39)"><input id="to" type="text" name="lname" placeholder="" ></span><%=to%></p>
+            </td>
+        </tr>
+    </table>
+    <script src="http://localhost:3000/read.js" type='text/javascript'></script>
+</body>
